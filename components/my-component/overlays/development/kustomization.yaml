@@ -1,0 +1,7 @@
+kind: Component
+
+resources:
+  - ../../base
+
+patchesStrategicMerge:
+  - deployment-patch.yaml

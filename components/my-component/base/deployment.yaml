@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: echo
+  template:
+    metadata:
+      labels:
+        name: echo
+    spec:
+      containers:
+        - image: jmalloc/echo-server
+          imagePullPolicy: IfNotPresent
+          name: echo
+          resources:
+            requests:
+              cpu: 200m
+              memory: 200Mi
